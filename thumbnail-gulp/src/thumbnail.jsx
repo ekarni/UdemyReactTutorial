@@ -1,3 +1,5 @@
+var Badge = require('badge');
+
 //Thumbnail template for each list item
 var Thumbnail = React.createClass ({
 	render: function () {
@@ -13,5 +15,5 @@ var Thumbnail = React.createClass ({
 		      	</div>
 	    	</div>
 	    </div>
-	}	
+	}
 })

@@ -17,13 +17,13 @@ gulp.task('default', function() {
  }));
 
  function build(file) {
-	 if (file) gutil.log('Recompiling ' + file)
+	 if (file) gutil.log('Recompiling ' + file);
 	 return bundler
-	 	.bundler()
+	 	.bundle()
 		.on('error', gutil.log.bind(gutil, 'Browserify Error'))
 		.pipe(source('main.js'))
 		.pipe(gulp.dest('./'));
  };
- build()
- bundler.on('update', build)
+ build();
+ bundler.on('update', build);
 });

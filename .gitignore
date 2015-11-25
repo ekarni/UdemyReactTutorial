@@ -11,6 +11,9 @@ $RECYCLE.BIN/
 #Ignore Node_Module Folder
 /thumbnail-gulp/node_modules
 
+#Ignore Node_modle in Dropdown
+/dropdown/node_modules
+
 # Windows Installer files
 *.cab
 *.msi

@@ -1,3 +1,6 @@
+var React = require('react');
+var ThumbnailList = require('thumbnail-list');
+
 //Main options for the app. Kept in one location for easy access
 var options = {
 	thumbnailData: [{

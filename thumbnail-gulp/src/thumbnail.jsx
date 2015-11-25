@@ -1,7 +1,9 @@
-var Badge = require('badge');
+var React = require('react');
+var Badge = require('./badge');
+
 
 //Thumbnail template for each list item
-var Thumbnail = React.createClass ({
+module.exports = React.createClass ({
 	render: function () {
 		return <div className="col-sm-6 col-md-4">
 			<div className="thumbnail">

@@ -24,6 +24,7 @@ gulp.task('default', function() {
 		.pipe(source('main.js'))
 		.pipe(gulp.dest('./'));
  };
+
  build();
  bundler.on('update', build);
 });

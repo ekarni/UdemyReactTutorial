@@ -23,6 +23,7 @@ module.exports = React.createClass ({
     <ul>
       {list}
     </ul>
+
     </div>
   }
 

@@ -18,15 +18,18 @@ module.exports = React.createClass({
           onClick={this.handleClick}
           className="btn btn-default"
           type="button">
-          Add
+          +
         </button>
       </span>
-      {this.state.text}
     </div>
   },
   handleClick: function() {
-    console.log(this.state.text);
-    //This is a test
+    this.props.itemsStore.push({
+      text: this.state.text,
+      done: false
+    });
+
+    this.setState({text: ''});
   },
   handleInputChange: function(event) {
     this.setState({text: event.target.value});

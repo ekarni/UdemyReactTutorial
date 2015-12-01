@@ -7,7 +7,7 @@ var rootURL = 'https://luminous-heat-9993.firebaseio.com/';
 var App = React.createClass({
   mixins: [ ReactFire ],
   componentWillMount: function() {
-    this.bindAsObject(new Firebase(rootURL + 'item/'), "item");
+    this.bindAsObject(new Firebase(rootURL + 'items/'), "items");
   },
   render: function() {
     return <div className="row panel panel-default">
@@ -15,7 +15,7 @@ var App = React.createClass({
         <h2 className="text-center">
           To-Do List
         </h2>
-        <Header />
+        <Header itemsStore={this.firebaseRefs.items} />
       </div>
     </div>
   }

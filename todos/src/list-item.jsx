@@ -8,7 +8,7 @@ module.exports = React.createClass({
     return {
       text: this.props.item.text,
       done: this.props.item.done,
-      textChange: false
+      textChanged: false
     }
   },
   componentWillMount: function() {
@@ -24,6 +24,7 @@ module.exports = React.createClass({
         />
       </span>
       <input type="text"
+        disabled={this.state.done}
         className="form-control"
         value={this.state.text}
         onChange={this.handleTextChange}
@@ -40,22 +41,39 @@ module.exports = React.createClass({
     </div>
   },
   changesButtons: function() {
-    console.log("changesButtons function 1");
     if(!this.state.textChanged) {
       return null
-      console.log("The If");
     } else {
-      console.log("The Else");
       return [
-        <button className="btn btn-default">Save</button>,
-        <button className="btn btn-default">Undo</button>
+        <button
+          className="btn btn-default"
+          onClick={this.handleSaveClick}
+          >
+          Save
+        </button>,
+        <button
+          className="btn btn-default"
+          onClick={this.handleUndoClick}
+          >
+          Undo
+        </button>
       ]
     }
+  },
+  handleSaveClick: function() {
+    this.fb.update({text: this.state.text});
+    this.setState({textChanged: false});
+  },
+  handleUndoClick: function() {
+    this.setState({
+      text: this.props.item.text,
+      textChanged: false
+    })
   },
   handleTextChange: function() {
     this.setState({
       text: event.target.value,
-      textChange: true
+      textChanged: true
     });
   },
   handleDoneChange: function() {
